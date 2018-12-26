@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is for GNU GRUB (version 2.02,
+25 April 2017).
+
+Copyright (C) 1999,2000,2001,2002,2004,2006,2008,2009,2010,2011,2012,2013 Free Software Foundation, Inc.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections. -->
+<!-- Created by GNU Texinfo 6.1, http://www.gnu.org/software/texinfo/ -->
+
+
+<!-- ZH_CN -->
+<!-- 这是GNU GRUB的参考手册（版本2.02,2017年四月25）。
+
+版权（C）1999,2000,2001,2002,2004,2006,2008,2009,2010,2011,2012,2013  自由软件基金会（Free Software Foundation，FSF）, Inc（（有限）公司，包括。股份有限公司）。
+
+根据GNU自由文档许可证，版本1.2或自由软件基金会发布的更高版本，允许复制，分发，修改这个文档。-->
+<!-- GNU文本信息 6.1 编造，http://www.gnu.org/software/texinfo/-->
+<head>
+<title>GNU GRUB Manual 2.02: Top（GNU GRUB 手册 2.02：Top）</title>
+
+<meta name="description" content="GNU GRUB Manual 2.02: Top">
+<meta name="keywords" content="GNU GRUB Manual 2.02: Top">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="#Top" rel="start" title="Top">
+<link href="Index.html#Index" rel="index" title="Index">
+<link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="../dir/index.html" rel="up" title="(dir)">
+<link href="Introduction.html#Introduction" rel="next" title="Introduction">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.indentedblock {margin-right: 0em}
+blockquote.smallindentedblock {margin-right: 0em; font-size: smaller}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style: oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nolinebreak {white-space: nowrap}
+span.roman {font-family: initial; font-weight: normal}
+span.sansserif {font-family: sans-serif; font-weight: normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en">
+<h1 class="settitle" align="center">GNU GRUB Manual 2.02</h1>
+
+
+
+
+
+
+<a name="SEC_Contents"></a>
+<h2 class="contents-heading">Table of Contents  目录</h2>
+
+<div class="contents">
+
+<ul class="no-bullet">
+  <li><a name="toc-Introduction-to-GRUB" href="Introduction.html#Introduction">1 Introduction to GRUB   介绍GRUB</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Overview-1" href="Overview.html#Overview">1.1 Overview 简介概述</a></li>
+    <li><a name="toc-History-of-GRUB" href="History.html#History">1.2 History of GRUB   GRUB的历史</a></li>
+    <li><a name="toc-Differences-from-previous-versions" href="Changes-from-GRUB-Legacy.html#Changes-from-GRUB-Legacy">1.3 Differences from previous versions   与以往版本不同</a></li>
+    <li><a name="toc-GRUB-features" href="Features.html#Features">1.4 GRUB features GRUB特点</a></li>
+    <li><a name="toc-The-role-of-a-boot-loader" href="Role-of-a-boot-loader.html#Role-of-a-boot-loader">1.5 The role of a boot loader   启动加载规则</a></li>
+  </ul></li>
+  <li><a name="toc-Naming-convention-1" href="Naming-convention.html#Naming-convention">2 Naming convention 命名规则</a></li>
+  <li><a name="toc-OS_002dspecific-notes-about-grub-tools-1" href="OS_002dspecific-notes-about-grub-tools.html#OS_002dspecific-notes-about-grub-tools">3 OS-specific notes about grub tools 关于grub工具的特定于操作系统的说明</a></li>
+  <li><a name="toc-Installation-1" href="Installation.html#Installation">4 Installation</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Installing-GRUB-using-grub_002dinstall-1" href="Installing-GRUB-using-grub_002dinstall.html#Installing-GRUB-using-grub_002dinstall">4.1 Installing GRUB using grub-install 使用grub-install安装GRUB</a></li>
+    <li><a name="toc-Making-a-GRUB-bootable-CD_002dROM-1" href="Making-a-GRUB-bootable-CD_002dROM.html#Making-a-GRUB-bootable-CD_002dROM">4.2 Making a GRUB bootable CD-ROM 设置GRUB启动项CD-ROM</a></li>
+    <li><a name="toc-The-map-between-BIOS-drives-and-OS-devices" href="Device-map.html#Device-map">4.3 The map between BIOS drives and OS devices   BIOS驱动器与操作系统设备之间的映射</a></li>
+    <li><a name="toc-BIOS-installation-1" href="BIOS-installation.html#BIOS-installation">4.4 BIOS installation BIOS安装</a></li>
+  </ul></li>
+  <li><a name="toc-Booting-1" href="Booting.html#Booting">5 Booting 引导</a>
+  <ul class="no-bullet">
+    <li><a name="toc-How-to-boot-operating-systems" href="General-boot-methods.html#General-boot-methods">5.1 How to boot operating systems 如何引导系统</a>
+    <ul class="no-bullet">
+      <li><a name="toc-How-to-boot-an-OS-directly-with-GRUB" href="Loading-an-operating-system-directly.html#Loading-an-operating-system-directly">5.1.1 How to boot an OS directly with GRUB   如何同GRUB引导系统</a></li>
+      <li><a name="toc-Chain_002dloading-an-OS" href="Chain_002dloading.html#Chain_002dloading">5.1.2 Chain-loading an OS   链式加载操作系统</a></li>
+    </ul></li>
+    <li><a name="toc-Loopback-booting-1" href="Loopback-booting.html#Loopback-booting">5.2 Loopback booting 循环引导</a></li>
+    <li><a name="toc-Some-caveats-on-OS_002dspecific-issues" href="OS_002dspecific-notes.html#OS_002dspecific-notes">5.3 Some caveats on OS-specific issues 关于OS特定问题的一些警告</a>
+    <ul class="no-bullet">
+      <li><a name="toc-GNU_002fHurd-1" href="GNU_002fHurd.html#GNU_002fHurd">5.3.1 GNU/Hurd</a></li>
+      <li><a name="toc-GNU_002fLinux-1" href="GNU_002fLinux.html#GNU_002fLinux">5.3.2 GNU/Linux linux操作系统</a></li>
+      <li><a name="toc-NetBSD-1" href="NetBSD.html#NetBSD">5.3.3 NetBSD</a></li>
+      <li><a name="toc-DOS_002fWindows-1" href="DOS_002fWindows.html#DOS_002fWindows">5.3.4 DOS/Windows windows操作系统</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Writing-your-own-configuration-file" href="Configuration.html#Configuration">6 Writing your own configuration file 编辑你的配置文件</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Simple-configuration-handling" href="Simple-configuration.html#Simple-configuration">6.1 Simple configuration handling 简单的配置处理</a></li>
+    <li><a name="toc-Writing-full-configuration-files-directly" href="Shell_002dlike-scripting.html#Shell_002dlike-scripting">6.2 Writing full configuration files directly 直接编写完整的配置文件</a></li>
+    <li><a name="toc-Multi_002dboot-manual-config-1" href="Multi_002dboot-manual-config.html#Multi_002dboot-manual-config">6.3 Multi-boot manual config 多引导手动设置</a></li>
+    <li><a name="toc-Embedding-a-configuration-file-into-GRUB" href="Embedded-configuration.html#Embedded-configuration">6.4 Embedding（嵌入） a configuration file into GRUB   将配置文件嵌入GRUB</a></li>
+  </ul></li>
+  <li><a name="toc-Theme-file-format-1" href="Theme-file-format.html#Theme-file-format">7 Theme file format 主题文件格式</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Introduction-1" href="Theme-file-format.html#Introduction-1">7.1 Introduction  介绍</a></li>
+    <li><a name="toc-Theme-Elements" href="Theme-file-format.html#Theme-Elements">7.2 Theme Elements    主题元素</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Colors" href="Theme-file-format.html#Colors">7.2.1 Colors    /颜色</a></li>
+      <li><a name="toc-Fonts" href="Theme-file-format.html#Fonts">7.2.2 Fonts   /字体</a></li>
+      <li><a name="toc-Progress-Bar" href="Theme-file-format.html#Progress-Bar">7.2.3 Progress Bar  /进度条</a></li>
+      <li><a name="toc-Circular-Progress-Indicator" href="Theme-file-format.html#Circular-Progress-Indicator">7.2.4 Circular Progress Indicator /环形进度说明</a></li>
+      <li><a name="toc-Labels" href="Theme-file-format.html#Labels">7.2.5 Labels    /标签</a></li>
+      <li><a name="toc-Boot-Menu" href="Theme-file-format.html#Boot-Menu">7.2.6 Boot Menu   /启动菜单</a></li>
+      <li><a name="toc-Styled-Boxes" href="Theme-file-format.html#Styled-Boxes">7.2.7 Styled Boxes  /样式盒</a></li>
+      <li><a name="toc-Creating-Styled-Box-Images" href="Theme-file-format.html#Creating-Styled-Box-Images">7.2.8 Creating Styled Box Images    /创造样式盒图片</a></li>
+    </ul></li>
+    <li><a name="toc-Theme-File-Manual" href="Theme-file-format.html#Theme-File-Manual">7.3 Theme File Manual   /主题文件手册</a>
+    <ul class="no-bullet">
+      <li><a name="toc-Global-Properties" href="Theme-file-format.html#Global-Properties">7.3.1 Global Properties（性质，财产）   /全局属性</a></li>
+      <li><a name="toc-Format" href="Theme-file-format.html#Format">7.3.2 Format    /格式</a></li>
+      <li><a name="toc-Global-Property-List" href="Theme-file-format.html#Global-Property-List">7.3.3 Global Property List  /全局属性清单</a></li>
+      <li><a name="toc-Component-Construction" href="Theme-file-format.html#Component-Construction">7.3.4 Component Construction    /部件构造</a></li>
+      <li><a name="toc-Component-List" href="Theme-file-format.html#Component-List">7.3.5 Component List    /部件列表</a></li>
+      <li><a name="toc-Common-properties" href="Theme-file-format.html#Common-properties">7.3.6 Common properties   /一般属性</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Booting-GRUB-from-the-network" href="Network.html#Network">8 Booting GRUB from the network   /网络GRUB引导</a></li>
+  <li><a name="toc-Using-GRUB-via-a-serial-line" href="Serial-terminal.html#Serial-terminal">9 Using GRUB via a serial line</a></li>
+  <li><a name="toc-Using-GRUB-with-vendor-power_002don-keys" href="Vendor-power_002don-keys.html#Vendor-power_002don-keys">10 Using GRUB with vendor power-on keys</a></li>
+  <li><a name="toc-GRUB-image-files" href="Images.html#Images">11 GRUB image files</a></li>
+  <li><a name="toc-Core-image-size-limitation-1" href="Core-image-size-limitation.html#Core-image-size-limitation">12 Core image size limitation</a></li>
+  <li><a name="toc-Filesystem-syntax-and-semantics" href="Filesystem.html#Filesystem">13 Filesystem syntax and semantics</a>
+  <ul class="no-bullet">
+    <li><a name="toc-How-to-specify-devices" href="Device-syntax.html#Device-syntax">13.1 How to specify devices</a></li>
+    <li><a name="toc-How-to-specify-files" href="File-name-syntax.html#File-name-syntax">13.2 How to specify files</a></li>
+    <li><a name="toc-How-to-specify-block-lists" href="Block-list-syntax.html#Block-list-syntax">13.3 How to specify block lists</a></li>
+  </ul></li>
+  <li><a name="toc-GRUB_0027s-user-interface" href="Interface.html#Interface">14 GRUB&rsquo;s user interface</a>
+  <ul class="no-bullet">
+    <li><a name="toc-The-flexible-command_002dline-interface" href="Command_002dline-interface.html#Command_002dline-interface">14.1 The flexible command-line interface</a></li>
+    <li><a name="toc-The-simple-menu-interface" href="Menu-interface.html#Menu-interface">14.2 The simple menu interface</a></li>
+    <li><a name="toc-Editing-a-menu-entry" href="Menu-entry-editor.html#Menu-entry-editor">14.3 Editing a menu entry</a></li>
+  </ul></li>
+  <li><a name="toc-GRUB-environment-variables" href="Environment.html#Environment">15 GRUB environment variables</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Special-environment-variables-1" href="Special-environment-variables.html#Special-environment-variables">15.1 Special environment variables</a>
+    <ul class="no-bullet">
+      <li><a name="toc-biosnum-1" href="biosnum.html#biosnum">15.1.1 biosnum</a></li>
+      <li><a name="toc-check_005fsignatures-1" href="check_005fsignatures.html#check_005fsignatures">15.1.2 check_signatures</a></li>
+      <li><a name="toc-chosen-1" href="chosen.html#chosen">15.1.3 chosen</a></li>
+      <li><a name="toc-cmdpath-1" href="cmdpath.html#cmdpath">15.1.4 cmdpath</a></li>
+      <li><a name="toc-color_005fhighlight-1" href="color_005fhighlight.html#color_005fhighlight">15.1.5 color_highlight</a></li>
+      <li><a name="toc-color_005fnormal-1" href="color_005fnormal.html#color_005fnormal">15.1.6 color_normal</a></li>
+      <li><a name="toc-config_005fdirectory-1" href="config_005fdirectory.html#config_005fdirectory">15.1.7 config_directory</a></li>
+      <li><a name="toc-config_005ffile-1" href="config_005ffile.html#config_005ffile">15.1.8 config_file</a></li>
+      <li><a name="toc-debug-1" href="debug.html#debug">15.1.9 debug</a></li>
+      <li><a name="toc-default-1" href="default.html#default">15.1.10 default</a></li>
+      <li><a name="toc-fallback-1" href="fallback.html#fallback">15.1.11 fallback</a></li>
+      <li><a name="toc-gfxmode-1" href="gfxmode.html#gfxmode">15.1.12 gfxmode</a></li>
+      <li><a name="toc-gfxpayload-1" href="gfxpayload.html#gfxpayload">15.1.13 gfxpayload</a></li>
+      <li><a name="toc-gfxterm_005ffont-1" href="gfxterm_005ffont.html#gfxterm_005ffont">15.1.14 gfxterm_font</a></li>
+      <li><a name="toc-grub_005fcpu-1" href="grub_005fcpu.html#grub_005fcpu">15.1.15 grub_cpu</a></li>
+      <li><a name="toc-grub_005fplatform-1" href="grub_005fplatform.html#grub_005fplatform">15.1.16 grub_platform</a></li>
+      <li><a name="toc-icondir-1" href="icondir.html#icondir">15.1.17 icondir</a></li>
+      <li><a name="toc-lang-1" href="lang.html#lang">15.1.18 lang</a></li>
+      <li><a name="toc-locale_005fdir-1" href="locale_005fdir.html#locale_005fdir">15.1.19 locale_dir</a></li>
+      <li><a name="toc-menu_005fcolor_005fhighlight-1" href="menu_005fcolor_005fhighlight.html#menu_005fcolor_005fhighlight">15.1.20 menu_color_highlight</a></li>
+      <li><a name="toc-menu_005fcolor_005fnormal-1" href="menu_005fcolor_005fnormal.html#menu_005fcolor_005fnormal">15.1.21 menu_color_normal</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fboot_005ffile-1" href="net_005f_003cinterface_003e_005fboot_005ffile.html#net_005f_003cinterface_003e_005fboot_005ffile">15.1.22 net_<var>&lt;interface&gt;</var>_boot_file</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fdhcp_005fserver_005fname-1" href="net_005f_003cinterface_003e_005fdhcp_005fserver_005fname.html#net_005f_003cinterface_003e_005fdhcp_005fserver_005fname">15.1.23 net_<var>&lt;interface&gt;</var>_dhcp_server_name</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fdomain-1" href="net_005f_003cinterface_003e_005fdomain.html#net_005f_003cinterface_003e_005fdomain">15.1.24 net_<var>&lt;interface&gt;</var>_domain</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fextensionspath-1" href="net_005f_003cinterface_003e_005fextensionspath.html#net_005f_003cinterface_003e_005fextensionspath">15.1.25 net_<var>&lt;interface&gt;</var>_extensionspath</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fhostname-1" href="net_005f_003cinterface_003e_005fhostname.html#net_005f_003cinterface_003e_005fhostname">15.1.26 net_<var>&lt;interface&gt;</var>_hostname</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fip-1" href="net_005f_003cinterface_003e_005fip.html#net_005f_003cinterface_003e_005fip">15.1.27 net_<var>&lt;interface&gt;</var>_ip</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fmac-1" href="net_005f_003cinterface_003e_005fmac.html#net_005f_003cinterface_003e_005fmac">15.1.28 net_<var>&lt;interface&gt;</var>_mac</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005fnext_005fserver-1" href="net_005f_003cinterface_003e_005fnext_005fserver.html#net_005f_003cinterface_003e_005fnext_005fserver">15.1.29 net_<var>&lt;interface&gt;</var>_next_server</a></li>
+      <li><a name="toc-net_005f_003cinterface_003e_005frootpath-1" href="net_005f_003cinterface_003e_005frootpath.html#net_005f_003cinterface_003e_005frootpath">15.1.30 net_<var>&lt;interface&gt;</var>_rootpath</a></li>
+      <li><a name="toc-net_005fdefault_005finterface-1" href="net_005fdefault_005finterface.html#net_005fdefault_005finterface">15.1.31 net_default_interface</a></li>
+      <li><a name="toc-net_005fdefault_005fip-1" href="net_005fdefault_005fip.html#net_005fdefault_005fip">15.1.32 net_default_ip</a></li>
+      <li><a name="toc-net_005fdefault_005fmac-1" href="net_005fdefault_005fmac.html#net_005fdefault_005fmac">15.1.33 net_default_mac</a></li>
+      <li><a name="toc-net_005fdefault_005fserver-1" href="net_005fdefault_005fserver.html#net_005fdefault_005fserver">15.1.34 net_default_server</a></li>
+      <li><a name="toc-pager-1" href="pager.html#pager">15.1.35 pager</a></li>
+      <li><a name="toc-prefix-1" href="prefix.html#prefix">15.1.36 prefix</a></li>
+      <li><a name="toc-pxe_005fblksize-1" href="pxe_005fblksize.html#pxe_005fblksize">15.1.37 pxe_blksize</a></li>
+      <li><a name="toc-pxe_005fdefault_005fgateway-1" href="pxe_005fdefault_005fgateway.html#pxe_005fdefault_005fgateway">15.1.38 pxe_default_gateway</a></li>
+      <li><a name="toc-pxe_005fdefault_005fserver-1" href="pxe_005fdefault_005fserver.html#pxe_005fdefault_005fserver">15.1.39 pxe_default_server</a></li>
+      <li><a name="toc-root-1" href="root.html#root">15.1.40 root</a></li>
+      <li><a name="toc-superusers-1" href="superusers.html#superusers">15.1.41 superusers</a></li>
+      <li><a name="toc-theme-1" href="theme.html#theme">15.1.42 theme</a></li>
+      <li><a name="toc-timeout-1" href="timeout.html#timeout">15.1.43 timeout</a></li>
+      <li><a name="toc-timeout_005fstyle-1" href="timeout_005fstyle.html#timeout_005fstyle">15.1.44 timeout_style</a></li>
+    </ul></li>
+    <li><a name="toc-The-GRUB-environment-block" href="Environment-block.html#Environment-block">15.2 The GRUB environment block</a></li>
+  </ul></li>
+  <li><a name="toc-The-list-of-available-commands" href="Commands.html#Commands">16 The list of available commands</a>
+  <ul class="no-bullet">
+    <li><a name="toc-The-list-of-commands-for-the-menu-only" href="Menu_002dspecific-commands.html#Menu_002dspecific-commands">16.1 The list of commands for the menu only</a>
+    <ul class="no-bullet">
+      <li><a name="toc-menuentry-1" href="menuentry.html#menuentry">16.1.1 menuentry</a></li>
+      <li><a name="toc-submenu-1" href="submenu.html#submenu">16.1.2 submenu</a></li>
+    </ul></li>
+    <li><a name="toc-The-list-of-general-commands" href="General-commands.html#General-commands">16.2 The list of general commands</a>
+    <ul class="no-bullet">
+      <li><a name="toc-serial-1" href="serial.html#serial">16.2.1 serial</a></li>
+      <li><a name="toc-terminal_005finput-1" href="terminal_005finput.html#terminal_005finput">16.2.2 terminal_input</a></li>
+      <li><a name="toc-terminal_005foutput-1" href="terminal_005foutput.html#terminal_005foutput">16.2.3 terminal_output</a></li>
+      <li><a name="toc-terminfo-1" href="terminfo.html#terminfo">16.2.4 terminfo</a></li>
+    </ul></li>
+    <li><a name="toc-The-list-of-command_002dline-and-menu-entry-commands" href="Command_002dline-and-menu-entry-commands.html#Command_002dline-and-menu-entry-commands">16.3 The list of command-line and menu entry commands</a>
+    <ul class="no-bullet">
+      <li><a name="toc-_005b-1" href="_005b.html#g_t_005b">16.3.1 [</a></li>
+      <li><a name="toc-acpi-1" href="acpi.html#acpi">16.3.2 acpi</a></li>
+      <li><a name="toc-authenticate-1" href="authenticate.html#authenticate">16.3.3 authenticate</a></li>
+      <li><a name="toc-background_005fcolor-1" href="background_005fcolor.html#background_005fcolor">16.3.4 background_color</a></li>
+      <li><a name="toc-background_005fimage-1" href="background_005fimage.html#background_005fimage">16.3.5 background_image</a></li>
+      <li><a name="toc-badram-1" href="badram.html#badram">16.3.6 badram</a></li>
+      <li><a name="toc-blocklist-1" href="blocklist.html#blocklist">16.3.7 blocklist</a></li>
+      <li><a name="toc-boot-1" href="boot.html#boot">16.3.8 boot</a></li>
+      <li><a name="toc-cat-1" href="cat.html#cat">16.3.9 cat</a></li>
+      <li><a name="toc-chainloader-1" href="chainloader.html#chainloader">16.3.10 chainloader</a></li>
+      <li><a name="toc-clear-1" href="clear.html#clear">16.3.11 clear</a></li>
+      <li><a name="toc-cmosclean-1" href="cmosclean.html#cmosclean">16.3.12 cmosclean</a></li>
+      <li><a name="toc-cmosdump-1" href="cmosdump.html#cmosdump">16.3.13 cmosdump</a></li>
+      <li><a name="toc-cmostest-1" href="cmostest.html#cmostest">16.3.14 cmostest</a></li>
+      <li><a name="toc-cmp-1" href="cmp.html#cmp">16.3.15 cmp</a></li>
+      <li><a name="toc-configfile-1" href="configfile.html#configfile">16.3.16 configfile</a></li>
+      <li><a name="toc-cpuid-1" href="cpuid.html#cpuid">16.3.17 cpuid</a></li>
+      <li><a name="toc-crc-1" href="crc.html#crc">16.3.18 crc</a></li>
+      <li><a name="toc-cryptomount-1" href="cryptomount.html#cryptomount">16.3.19 cryptomount</a></li>
+      <li><a name="toc-date-1" href="date.html#date">16.3.20 date</a></li>
+      <li><a name="toc-linux-1" href="devicetree.html#devicetree">16.3.21 linux</a></li>
+      <li><a name="toc-distrust-1" href="distrust.html#distrust">16.3.22 distrust</a></li>
+      <li><a name="toc-drivemap-1" href="drivemap.html#drivemap">16.3.23 drivemap</a></li>
+      <li><a name="toc-echo-1" href="echo.html#echo">16.3.24 echo</a></li>
+      <li><a name="toc-eval-1" href="eval.html#eval">16.3.25 eval</a></li>
+      <li><a name="toc-export-1" href="export.html#export">16.3.26 export</a></li>
+      <li><a name="toc-false-1" href="false.html#false">16.3.27 false</a></li>
+      <li><a name="toc-gettext-1" href="gettext.html#gettext">16.3.28 gettext</a></li>
+      <li><a name="toc-gptsync-1" href="gptsync.html#gptsync">16.3.29 gptsync</a></li>
+      <li><a name="toc-halt-1" href="halt.html#halt">16.3.30 halt</a></li>
+      <li><a name="toc-hashsum-1" href="hashsum.html#hashsum">16.3.31 hashsum</a></li>
+      <li><a name="toc-help-1" href="help.html#help">16.3.32 help</a></li>
+      <li><a name="toc-initrd-1" href="initrd.html#initrd">16.3.33 initrd</a></li>
+      <li><a name="toc-initrd16-1" href="initrd16.html#initrd16">16.3.34 initrd16</a></li>
+      <li><a name="toc-insmod-1" href="insmod.html#insmod">16.3.35 insmod</a></li>
+      <li><a name="toc-keystatus-1" href="keystatus.html#keystatus">16.3.36 keystatus</a></li>
+      <li><a name="toc-linux-2" href="linux.html#linux">16.3.37 linux</a></li>
+      <li><a name="toc-linux16-1" href="linux16.html#linux16">16.3.38 linux16</a></li>
+      <li><a name="toc-list_005fenv-1" href="list_005fenv.html#list_005fenv">16.3.39 list_env</a></li>
+      <li><a name="toc-list_005ftrusted-1" href="list_005ftrusted.html#list_005ftrusted">16.3.40 list_trusted</a></li>
+      <li><a name="toc-load_005fenv-1" href="load_005fenv.html#load_005fenv">16.3.41 load_env</a></li>
+      <li><a name="toc-loadfont-1" href="loadfont.html#loadfont">16.3.42 loadfont</a></li>
+      <li><a name="toc-loopback-1" href="loopback.html#loopback">16.3.43 loopback</a></li>
+      <li><a name="toc-ls-1" href="ls.html#ls">16.3.44 ls</a></li>
+      <li><a name="toc-lsfonts-1" href="lsfonts.html#lsfonts">16.3.45 lsfonts</a></li>
+      <li><a name="toc-lsmod-1" href="lsmod.html#lsmod">16.3.46 lsmod</a></li>
+      <li><a name="toc-md5sum-1" href="md5sum.html#md5sum">16.3.47 md5sum</a></li>
+      <li><a name="toc-module-1" href="module.html#module">16.3.48 module</a></li>
+      <li><a name="toc-multiboot-1" href="multiboot.html#multiboot">16.3.49 multiboot</a></li>
+      <li><a name="toc-nativedisk-1" href="nativedisk.html#nativedisk">16.3.50 nativedisk</a></li>
+      <li><a name="toc-normal-1" href="normal.html#normal">16.3.51 normal</a></li>
+      <li><a name="toc-normal_005fexit-1" href="normal_005fexit.html#normal_005fexit">16.3.52 normal_exit</a></li>
+      <li><a name="toc-parttool-1" href="parttool.html#parttool">16.3.53 parttool</a></li>
+      <li><a name="toc-password-1" href="password.html#password">16.3.54 password</a></li>
+      <li><a name="toc-password_005fpbkdf2-1" href="password_005fpbkdf2.html#password_005fpbkdf2">16.3.55 password_pbkdf2</a></li>
+      <li><a name="toc-play-1" href="play.html#play">16.3.56 play</a></li>
+      <li><a name="toc-probe-1" href="probe.html#probe">16.3.57 probe</a></li>
+      <li><a name="toc-pxe_005funload-1" href="pxe_005funload.html#pxe_005funload">16.3.58 pxe_unload</a></li>
+      <li><a name="toc-read-1" href="read.html#read">16.3.59 read</a></li>
+      <li><a name="toc-reboot-1" href="reboot.html#reboot">16.3.60 reboot</a></li>
+      <li><a name="toc-regexp-1" href="regexp.html#regexp">16.3.61 regexp</a></li>
+      <li><a name="toc-rmmod-1" href="rmmod.html#rmmod">16.3.62 rmmod</a></li>
+      <li><a name="toc-save_005fenv-1" href="save_005fenv.html#save_005fenv">16.3.63 save_env</a></li>
+      <li><a name="toc-search-1" href="search.html#search">16.3.64 search</a></li>
+      <li><a name="toc-sendkey-1" href="sendkey.html#sendkey">16.3.65 sendkey</a></li>
+      <li><a name="toc-set-1" href="set.html#set">16.3.66 set</a></li>
+      <li><a name="toc-sha1sum-1" href="sha1sum.html#sha1sum">16.3.67 sha1sum</a></li>
+      <li><a name="toc-sha256sum-1" href="sha256sum.html#sha256sum">16.3.68 sha256sum</a></li>
+      <li><a name="toc-sha512sum-1" href="sha512sum.html#sha512sum">16.3.69 sha512sum</a></li>
+      <li><a name="toc-sleep-1" href="sleep.html#sleep">16.3.70 sleep</a></li>
+      <li><a name="toc-source-1" href="source.html#source">16.3.71 source</a></li>
+      <li><a name="toc-test-1" href="test.html#test">16.3.72 test</a></li>
+      <li><a name="toc-true-1" href="true.html#true">16.3.73 true</a></li>
+      <li><a name="toc-trust-1" href="trust.html#trust">16.3.74 trust</a></li>
+      <li><a name="toc-unset-1" href="unset.html#unset">16.3.75 unset</a></li>
+      <li><a name="toc-uppermem-1" href="uppermem.html#uppermem">16.3.76 uppermem</a></li>
+      <li><a name="toc-verify_005fdetached-1" href="verify_005fdetached.html#verify_005fdetached">16.3.77 verify_detached</a></li>
+      <li><a name="toc-videoinfo-1" href="videoinfo.html#videoinfo">16.3.78 videoinfo</a></li>
+      <li><a name="toc-xen_005fhypervisor-1" href="xen_005fhypervisor.html#xen_005fhypervisor">16.3.79 xen_hypervisor</a></li>
+      <li><a name="toc-xen_005flinux-1" href="xen_005flinux.html#xen_005flinux">16.3.80 xen_linux</a></li>
+      <li><a name="toc-xen_005finitrd-1" href="xen_005finitrd.html#xen_005finitrd">16.3.81 xen_initrd</a></li>
+      <li><a name="toc-xen_005fxsm-1" href="xen_005fxsm.html#xen_005fxsm">16.3.82 xen_xsm</a></li>
+    </ul></li>
+    <li><a name="toc-The-list-of-networking-commands" href="Networking-commands.html#Networking-commands">16.4 The list of networking commands</a>
+    <ul class="no-bullet">
+      <li><a name="toc-net_005fadd_005faddr-1" href="net_005fadd_005faddr.html#net_005fadd_005faddr">16.4.1 net_add_addr</a></li>
+      <li><a name="toc-net_005fadd_005fdns-1" href="net_005fadd_005fdns.html#net_005fadd_005fdns">16.4.2 net_add_dns</a></li>
+      <li><a name="toc-net_005fadd_005froute-1" href="net_005fadd_005froute.html#net_005fadd_005froute">16.4.3 net_add_route</a></li>
+      <li><a name="toc-net_005fbootp-1" href="net_005fbootp.html#net_005fbootp">16.4.4 net_bootp</a></li>
+      <li><a name="toc-net_005fdel_005faddr-1" href="net_005fdel_005faddr.html#net_005fdel_005faddr">16.4.5 net_del_addr</a></li>
+      <li><a name="toc-net_005fdel_005fdns-1" href="net_005fdel_005fdns.html#net_005fdel_005fdns">16.4.6 net_del_dns</a></li>
+      <li><a name="toc-net_005fdel_005froute-1" href="net_005fdel_005froute.html#net_005fdel_005froute">16.4.7 net_del_route</a></li>
+      <li><a name="toc-net_005fget_005fdhcp_005foption-1" href="net_005fget_005fdhcp_005foption.html#net_005fget_005fdhcp_005foption">16.4.8 net_get_dhcp_option</a></li>
+      <li><a name="toc-net_005fipv6_005fautoconf-1" href="net_005fipv6_005fautoconf.html#net_005fipv6_005fautoconf">16.4.9 net_ipv6_autoconf</a></li>
+      <li><a name="toc-net_005fls_005faddr-1" href="net_005fls_005faddr.html#net_005fls_005faddr">16.4.10 net_ls_addr</a></li>
+      <li><a name="toc-net_005fls_005fcards-1" href="net_005fls_005fcards.html#net_005fls_005fcards">16.4.11 net_ls_cards</a></li>
+      <li><a name="toc-net_005fls_005fdns-1" href="net_005fls_005fdns.html#net_005fls_005fdns">16.4.12 net_ls_dns</a></li>
+      <li><a name="toc-net_005fls_005froutes-1" href="net_005fls_005froutes.html#net_005fls_005froutes">16.4.13 net_ls_routes</a></li>
+      <li><a name="toc-net_005fnslookup-1" href="net_005fnslookup.html#net_005fnslookup">16.4.14 net_nslookup</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Internationalisation-1" href="Internationalisation.html#Internationalisation">17 Internationalisation</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Charset" href="Internationalisation.html#Charset">17.1 Charset</a></li>
+    <li><a name="toc-Filesystems" href="Internationalisation.html#Filesystems">17.2 Filesystems</a></li>
+    <li><a name="toc-Output-terminal" href="Internationalisation.html#Output-terminal">17.3 Output terminal</a></li>
+    <li><a name="toc-Input-terminal" href="Internationalisation.html#Input-terminal">17.4 Input terminal</a></li>
+    <li><a name="toc-Gettext" href="Internationalisation.html#Gettext">17.5 Gettext</a></li>
+    <li><a name="toc-Regexp" href="Internationalisation.html#Regexp">17.6 Regexp</a></li>
+    <li><a name="toc-Other" href="Internationalisation.html#Other">17.7 Other</a></li>
+  </ul></li>
+  <li><a name="toc-Security-1" href="Security.html#Security">18 Security</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Authentication-and-authorisation-in-GRUB" href="Authentication-and-authorisation.html#Authentication-and-authorisation">18.1 Authentication and authorisation in GRUB</a></li>
+    <li><a name="toc-Using-digital-signatures-in-GRUB" href="Using-digital-signatures.html#Using-digital-signatures">18.2 Using digital signatures in GRUB</a></li>
+  </ul></li>
+  <li><a name="toc-Platform-limitations-1" href="Platform-limitations.html#Platform-limitations">19 Platform limitations</a></li>
+  <li><a name="toc-Outline" href="Platform_002dspecific-operations.html#Platform_002dspecific-operations">20 Outline</a></li>
+  <li><a name="toc-Supported-boot-targets" href="Supported-kernels.html#Supported-kernels">21 Supported boot targets</a>
+  <ul class="no-bullet">
+    <li><a name="toc-Boot-tests" href="Supported-kernels.html#Boot-tests">21.1 Boot tests</a></li>
+  </ul></li>
+  <li><a name="toc-Error-messages-produced-by-GRUB" href="Troubleshooting.html#Troubleshooting">22 Error messages produced by GRUB</a>
+  <ul class="no-bullet">
+    <li><a name="toc-GRUB-only-offers-a-rescue-shell-1" href="GRUB-only-offers-a-rescue-shell.html#GRUB-only-offers-a-rescue-shell">22.1 GRUB only offers a rescue shell</a></li>
+  </ul></li>
+  <li><a name="toc-Invoking-grub_002dinstall-1" href="Invoking-grub_002dinstall.html#Invoking-grub_002dinstall">23 Invoking grub-install</a></li>
+  <li><a name="toc-Invoking-grub_002dmkconfig-1" href="Invoking-grub_002dmkconfig.html#Invoking-grub_002dmkconfig">24 Invoking grub-mkconfig</a></li>
+  <li><a name="toc-Invoking-grub_002dmkpasswd_002dpbkdf2-1" href="Invoking-grub_002dmkpasswd_002dpbkdf2.html#Invoking-grub_002dmkpasswd_002dpbkdf2">25 Invoking grub-mkpasswd-pbkdf2</a></li>
+  <li><a name="toc-Invoking-grub_002dmkrelpath-1" href="Invoking-grub_002dmkrelpath.html#Invoking-grub_002dmkrelpath">26 Invoking grub-mkrelpath</a></li>
+  <li><a name="toc-Invoking-grub_002dmkrescue-1" href="Invoking-grub_002dmkrescue.html#Invoking-grub_002dmkrescue">27 Invoking grub-mkrescue</a></li>
+  <li><a name="toc-Invoking-grub_002dmount-1" href="Invoking-grub_002dmount.html#Invoking-grub_002dmount">28 Invoking grub-mount</a></li>
+  <li><a name="toc-Invoking-grub_002dprobe-1" href="Invoking-grub_002dprobe.html#Invoking-grub_002dprobe">29 Invoking grub-probe</a></li>
+  <li><a name="toc-Invoking-grub_002dscript_002dcheck-1" href="Invoking-grub_002dscript_002dcheck.html#Invoking-grub_002dscript_002dcheck">30 Invoking grub-script-check</a></li>
+  <li><a name="toc-How-to-obtain-and-build-GRUB" href="Obtaining-and-Building-GRUB.html#Obtaining-and-Building-GRUB">Appendix A How to obtain and build GRUB</a></li>
+  <li><a name="toc-Reporting-bugs-1" href="Reporting-bugs.html#Reporting-bugs">Appendix B Reporting bugs</a></li>
+  <li><a name="toc-Where-GRUB-will-go" href="Future.html#Future">Appendix C Where GRUB will go</a></li>
+  <li><a name="toc-Copying-This-Manual-1" href="Copying-This-Manual.html#Copying-This-Manual">Appendix D Copying This Manual</a>
+  <ul class="no-bullet">
+    <li><a name="toc-GNU-Free-Documentation-License-1" href="GNU-Free-Documentation-License.html#GNU-Free-Documentation-License">D.1 GNU Free Documentation License</a>
+    <ul class="no-bullet">
+      <li><a name="toc-ADDENDUM_003a-How-to-use-this-License-for-your-documents" href="GNU-Free-Documentation-License.html#ADDENDUM_003a-How-to-use-this-License-for-your-documents">D.1.1 ADDENDUM: How to use this License for your documents</a></li>
+    </ul></li>
+  </ul></li>
+  <li><a name="toc-Index-1" href="Index.html#Index">Index</a></li>
+</ul>
+</div>
+
+
+
+<a name="Top"></a>
+<div class="header">
+<p>
+Next: <a href="Introduction.html#Introduction" accesskey="n" rel="next">Introduction</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<a name="GNU-GRUB-manual"></a>
+<h1 class="top">GNU GRUB manual</h1>
+
+<p>This is the documentation of GNU GRUB, the GRand Unified Bootloader,
+a flexible and powerful boot loader program for a wide range of
+architectures.
+</p>
+<p>This edition documents version 2.02.
+</p>
+<p>This manual is for GNU GRUB (version 2.02,
+25 April 2017).
+</p>
+<p>Copyright &copy; 1999,2000,2001,2002,2004,2006,2008,2009,2010,2011,2012,2013 Free Software Foundation, Inc.
+</p>
+<blockquote>
+<p>Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.2 or
+any later version published by the Free Software Foundation; with no
+Invariant Sections.
+</p></blockquote>
+
+
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="Introduction.html#Introduction" accesskey="1">Introduction</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Capturing the spirit of GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Naming-convention.html#Naming-convention" accesskey="2">Naming convention</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Names of your drives in GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="OS_002dspecific-notes-about-grub-tools.html#OS_002dspecific-notes-about-grub-tools" accesskey="3">OS-specific notes about grub tools</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+                                Some notes about OS-specific behaviour of GRUB
+                                tools
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Installation.html#Installation" accesskey="4">Installation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Installing GRUB on your drive
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Booting.html#Booting" accesskey="5">Booting</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to boot different operating systems
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Configuration.html#Configuration" accesskey="6">Configuration</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Writing your own configuration file
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Theme-file-format.html#Theme-file-format" accesskey="7">Theme file format</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Format of GRUB theme files
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Network.html#Network" accesskey="8">Network</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Downloading OS images from a network
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Serial-terminal.html#Serial-terminal" accesskey="9">Serial terminal</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Using GRUB via a serial line
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Vendor-power_002don-keys.html#Vendor-power_002don-keys">Vendor power-on keys</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Changing GRUB behaviour on vendor power-on keys
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Images.html#Images">Images</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">GRUB image files
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Core-image-size-limitation.html#Core-image-size-limitation">Core image size limitation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">GRUB image files size limitations
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Filesystem.html#Filesystem">Filesystem</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Filesystem syntax and semantics
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Interface.html#Interface">Interface</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The menu and the command-line
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Environment.html#Environment">Environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">GRUB environment variables
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Commands.html#Commands">Commands</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The list of available builtin commands
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Internationalisation.html#Internationalisation">Internationalisation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Topics relating to language support
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Security.html#Security">Security</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Authentication, authorisation, and signatures
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Platform-limitations.html#Platform-limitations">Platform limitations</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The list of platform-specific limitations
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Platform_002dspecific-operations.html#Platform_002dspecific-operations">Platform-specific operations</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Platform-specific operations
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Supported-kernels.html#Supported-kernels">Supported kernels</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">The list of supported kernels
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Troubleshooting.html#Troubleshooting">Troubleshooting</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Error messages produced by GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dinstall.html#Invoking-grub_002dinstall">Invoking grub-install</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to use the GRUB installer
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dmkconfig.html#Invoking-grub_002dmkconfig">Invoking grub-mkconfig</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Generate a GRUB configuration file
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dmkpasswd_002dpbkdf2.html#Invoking-grub_002dmkpasswd_002dpbkdf2">Invoking grub-mkpasswd-pbkdf2</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+                                Generate GRUB password hashes
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dmkrelpath.html#Invoking-grub_002dmkrelpath">Invoking grub-mkrelpath</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Make system path relative to its root
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dmkrescue.html#Invoking-grub_002dmkrescue">Invoking grub-mkrescue</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Make a GRUB rescue image
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dmount.html#Invoking-grub_002dmount">Invoking grub-mount</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Mount a file system using GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dprobe.html#Invoking-grub_002dprobe">Invoking grub-probe</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Probe device information for GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Invoking-grub_002dscript_002dcheck.html#Invoking-grub_002dscript_002dcheck">Invoking grub-script-check</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Check GRUB script file for syntax errors
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Obtaining-and-Building-GRUB.html#Obtaining-and-Building-GRUB">Obtaining and Building GRUB</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">How to obtain and build GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Reporting-bugs.html#Reporting-bugs">Reporting bugs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Where you should send a bug report
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Future.html#Future">Future</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Some future plans on GRUB
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Copying-This-Manual.html#Copying-This-Manual">Copying This Manual</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">Copying This Manual
+</td></tr>
+<tr><td align="left" valign="top">&bull; <a href="Index.html#Index">Index</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+
+<hr>
+<div class="header">
+<p>
+Next: <a href="Introduction.html#Introduction" accesskey="n" rel="next">Introduction</a>, Up: <a href="../dir/index.html" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>
