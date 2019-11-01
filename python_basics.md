@@ -14,9 +14,9 @@
 ### python保留字
 保留字即关键字，我们不能把它们用作任何标识符名称。Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：
 
->>> import keyword
->>> keyword.kwlist
-['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+* import keyword
+* keyword.kwlist
+>['False', 'None', 'True', 'and', 'as', 'assert', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 
 ### 注释
 
@@ -30,7 +30,7 @@ Python中单行注释以 # 开头，实例如下：
 print ("Hello, Python!") # 第二个注释
 ~~~
 
->执行以上代码，输出结果为：
+执行以上代码，输出结果为：
 ~~~
 Hello, Python!
 ~~~
@@ -63,25 +63,30 @@ python最具特色的就是使用缩进来表示代码块，不需要使用大�
 
 缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。实例如下：
 
-实例(Python 3.0+)
+* 实例(Python 3.0+)
+~~~
 if True:
     print ("True")
 else:
     print ("False")
+~~~
 以下代码最后一行语句缩进数的空格数不一致，会导致运行错误：
-
+~~~
 if True:
     print ("Answer")
     print ("True")
 else:
     print ("Answer")
   print ("False")    # 缩进不一致，会导致运行错误
+~~~
 以上程序由于缩进不一致，执行后会出现类似以下错误：
-
+~~~
  File "test.py", line 6
     print ("False")    # 缩进不一致，会导致运行错误
                                       ^
+
 IndentationError: unindent does not match any outer indentation level
+~~~
 ### 多行语句
 Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠(\)来实现多行语句，例如：
 
